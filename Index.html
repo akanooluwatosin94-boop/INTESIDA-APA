@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School Result System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>School Result Management System</h2>
+
+  <!-- CLASS + STUDENT INFO -->
+  <div class="student-box">
+
+    <label>Class:</label>
+    <select id="className">
+      <option>JSS1</option>
+      <option>JSS2</option>
+      <option>JSS3</option>
+      <option>SSS1</option>
+      <option>SSS2</option>
+      <option>SSS3</option>
+    </select>
+
+    <input type="text" id="studentName" placeholder="Student Name">
+    <input type="text" id="admissionNo" placeholder="Admission Number">
+
+  </div>
+
+  <!-- RESULT TABLE -->
+  <table>
+
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>CA (50)</th>
+        <th>Exam (50)</th>
+        <th>Total</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+
+    <tbody id="subjectTable">
+      <!-- JavaScript will auto-generate subjects here -->
+    </tbody>
+
+  </table>
+
+  <!-- BUTTONS -->
+  <button onclick="compute()">Compute Result</button>
+  <button onclick="window.print()">Print Report</button>
+<button onclick="saveResult()">Save Result</button>
+<button onclick="loadResult()">Load Result</button>
+  <!-- OUTPUT -->
+  <div id="reportCard">
+
+  <h3>STUDENT REPORT CARD</h3>
+
+  <p><b>Name:</b> <span id="rName"></span></p>
+  <p><b>Admission No:</b> <span id="rAdm"></span></p>
+  <p><b>Class:</b> <span id="rClass"></span></p>
+
+  <h4>RESULT SUMMARY</h4>
+
+  <table id="resultTable">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Total</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <<div id="reportCard">
+
+  <div style="text-align:center; margin-bottom:15px;">
+    <div id="logoBox" style="width:80px; height:80px; border:1px solid #000; margin:auto;">
+    
+    </div><div id="reportHeader
+  </div>
+</div>
+ <p><b>Name:</b> <span id="rName"></span></p>
+  <p><b>Admission No:</b> <span id="rAdm"></span></p>
+  <p><b>Class:</b> <span id="rClass"></span></p>
+
+  <table id="resultTable">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Total</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+
+    <tbody></tbody>
+  </table>
+
+  <h3 id="average"></h3>
+  <h3 id="comment"></h3>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html><!-- SUBJECT MANAGER -->
+<div class="subject-manager">
+
+  <h3>Subject Manager</h3>
+
+  <input type="text" id="newSubject" placeholder="Enter new subject">
+
+  <button onclick="addSubject()">Add Subject</button>
+
+  <select id="removeSubject"></select>
+
+  <button onclick="removeSubject()">Remove Subject</button>
+
+</div><button onclick="window.print()">Print Report Card</button>

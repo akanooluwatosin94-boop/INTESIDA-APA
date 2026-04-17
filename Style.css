@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f4f7;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Student info box */
+.student-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.student-box input,
+.student-box select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+input[type="number"] {
+  width: 70px;
+  padding: 5px;
+}
+
+/* Buttons */
+button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  background: #2c3e50;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1a252f;
+}
+
+/* Output section */
+#average, #comment {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Print clean layout */
+@media print {
+  button {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  .container {
+    box-shadow: none;
+  }
+.subject-manager {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.subject-manager input,
+.subject-manager select {
+  padding: 8px;
+  margin: 5px;
+}
+
+.subject-manager button {
+  padding: 8px 12px;
+}#reportCard {
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+#reportCard h3 {
+  text-align: center;
+}
+
+#resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#resultTable th, #resultTable td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+}function loadResult() {
+  let record = JSON.parse(localStorage.getItem("intesidaResult"));
+
+  if (!record) {
+    alert("No saved data found");
+    return;
+  }
+
+  document.getElementById("studentName").value = record.name;
+  document.getElementById("admissionNo").value = record.admissionNo;
+  document.getElementById("className").value = record.className;
+
+  let ca = document.getElementsByClassName("ca");
+  let exam = document.getElementsByClassName("exam");
+
+  for (let i = 0; i < record.results.length; i++) {
+    ca[i].value = record.results[i].ca;
+    exam[i].value = record.results[i].exam;
+  }
+
+  alert("Result Loaded 👍 Now click Compute");
+}
